@@ -1,0 +1,15 @@
+# Transpiled files and dependencies
+/node_modules
+/public/js
+/public/css
+/public/sounds
+/dist
+
+# Application instance specific
+/logs
+/db
+
+# ignore junk files
+npm-debug.log
+.DS_Store
+Thumbs.db
