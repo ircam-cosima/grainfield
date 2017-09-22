@@ -9,6 +9,9 @@
 /logs
 /db
 
+src/server/config
+!src/server/config/default.js
+
 # ignore junk files
 npm-debug.log
 .DS_Store
