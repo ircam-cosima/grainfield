@@ -22,7 +22,7 @@
   "dependencies": {
     "babel-runtime": "^6.6.1",
     "debug": "^2.6.4",
-    "soundworks": "collective-soundworks/soundworks#v2.0.0",
+    "soundworks": "^2.1.8",
     "source-map-support": "^0.4.0"
   },
   "devDependencies": {
