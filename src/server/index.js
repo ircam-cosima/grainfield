@@ -53,7 +53,7 @@ sharedParams.addText('numPlayers', 'Num Players', 0, ['controller']);
 sharedParams.addEnum('state', 'State', ['wait', 'start', 'end'], 'wait');
 // recorders
 sharedParams.addEnum('record', 'Record', ['record', 'stop'], 'stop');
-sharedParams.addNumber('gain', 'Volume', -60, 26, .1, 0);
+sharedParams.addNumber('gain', 'Volume', -60, 40, 1, 0);
 // granular engine params
 sharedParams.addNumber('periodAbs', 'Period', 0.02, 0.2, 0.001, 0.05);
 sharedParams.addNumber('durationAbs', 'Duration', 0.01, 0.5, 0.001, 0.2);

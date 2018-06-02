@@ -9,13 +9,6 @@ function bootstrap() {
   // @see {~/html/default.ejs}
   const config = Object.assign({ appContainer: '#container' }, window.soundworksConfig);
 
-  const nameArr = window.soundworksConfig.appName.split('');
-  nameArr.sort(() => Math.random() - 0.5);
-  const name = nameArr.join('');
-
-  // initialize the 'player' client
-  config.appName = name;
-
   soundworks.client.init(config.clientType, config);
     // configure views for the services
   soundworks.client.setServiceInstanciationHook((id, instance) => {

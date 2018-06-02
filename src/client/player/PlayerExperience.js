@@ -39,13 +39,16 @@ const template = `
     <div class="section-center flex-center">
       <p class="normal">
         <% if (state === 'wait') { %>
-          (wait)
+          Connected,<br/>
+          Please wait.
         <% } else if (state === 'starting') { %>
-          (prepare to play)
-        <% } else if (state === 'started') { %>
-          (play)
-        <% } else if (state === 'thanks') { %>
-          (...thanks)
+          Starting sound...
+        <% } else if (state === 'playing') { %>
+          Playing,<br/>
+          Move your device.
+        <% } else if (state === 'end') { %>
+          Thanks,<br/>
+          That's all!
         <% } %>
       </p>
     </div>
@@ -178,19 +181,19 @@ class PlayerExperience extends soundworks.Experience {
     this.view.clearBackgroundColor(releaseTime);
     this.view.removeRenderer(this.renderer);
 
-    setTimeout(() => this.view.setState('thanks'), (releaseTime + 2) * 1000);
+    setTimeout(() => this.view.setState('end'), (releaseTime + 2) * 1000);
   }
 
   _onBuffer(buffer, phase) {
     console.log('new buffer', phase);
     this.synth.setBuffer(buffer);
 
-    if (!this.synth.hasStarted) {
+    if (!this.synth.isPlaying) {
       this.synth.start();
       this.view.addRenderer(this.renderer);
     }
 
-    this.view.setState('started');
+    this.view.setState('playing');
     this.view.updateBackgroundColor();
   }
 

@@ -91,7 +91,7 @@ class Synth {
 
     this.currentIndex = 0;
     this.crossFadeDuration = 2;
-    this.hasStarted = false;
+    this.isPlaying = false;
     this.currentPosition = Math.random();
 
     this.setBuffer = this.setBuffer.bind(this);
@@ -100,14 +100,14 @@ class Synth {
   }
 
   start() {
-    this.hasStarted = true;
+    this.isPlaying = true;
   }
 
   stop(releaseTime = 0) {
     const engine = this.engines[this.currentIndex];
     engine.fadeOut(releaseTime);
 
-    this.hasStarted = false;
+    this.isPlaying = false;
   }
 
   setCrossFadeDuration(value) {
