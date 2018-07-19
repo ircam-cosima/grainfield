@@ -47,6 +47,10 @@ p {
   padding: 0;
 }
 
+.loading {
+  background: url(../images/loader.gif) 50% 50% no-repeat;
+}
+
 // -----------------------------------------------------------------
 // LAYOUT HELPERS
 // -----------------------------------------------------------------
@@ -132,13 +136,12 @@ p, .normal {
 
 .btn {
   background-color: $backgroundColor;
-  border: 1px solid $textColor;
+  border: $borderSize solid $textColor;
   border-radius: $borderRadius;
   color: $textColor;
   padding: 6px 0;
   font-size: 1rem;
   display: block;
-  @include transition(background-color 50ms);
   letter-spacing: 0.05em;
 
   &:active, &.active {
@@ -150,12 +153,18 @@ p, .normal {
     outline: none;
   }
 
-  &.unselected, &.disabled, &[disabled] {
+  &.disabled, &[disabled] {
     opacity: 0.5;
   }
 
-  &.selected {
-    opacity: 1;
+  &.pushed {
+    background-color: $textColor;
+    color: $backgroundColor;
+  }
+
+  &.released {
+    background-color: $backgroundColor;
+    color: $textColor;
   }
 }
 
@@ -176,4 +185,3 @@ p, .normal {
 .soft-blink {
   @include animation('soft-blink 3.6s ease-in-out infinite');
 }
-

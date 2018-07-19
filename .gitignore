@@ -4,12 +4,14 @@
 /public/css
 /dist
 
-# Application instance specific
-/logs
-/db
-
+# config files
 src/server/config
 !src/server/config/default.js
+
+# Application instance specific
+/logs
+.soundworks
+/bin/.browserify-cache.json
 
 # ignore junk files
 npm-debug.log

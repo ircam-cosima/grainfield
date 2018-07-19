@@ -122,7 +122,6 @@ class PlayerExperience extends soundworks.Experience {
 
     const recordings = this.sharedConfig.get('recordings');
     this.phase = client.index % recordings.record.num;
-    console.log(this.phase);
 
     this.synth = new Synth();
     this.pitchAndRoll = new PitchAndRollEstimator();
@@ -185,7 +184,6 @@ class PlayerExperience extends soundworks.Experience {
   }
 
   _onBuffer(buffer, phase) {
-    console.log('new buffer', phase);
     this.synth.setBuffer(buffer);
 
     if (!this.synth.isPlaying) {
