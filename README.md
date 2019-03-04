@@ -11,7 +11,7 @@ To run the application:
 * run `npm run watch` in the project directory in an open a shell/terminal
 * start the *controller* client, open the URL `<server address>:<port>/controller` in your browser 
 * start the *recorder* client, open the URL `<server address>:<port>/recorder` in your browser 
-* start *player* clients, open the URL `<server address>:<port>/` in your browser
+* start *player* clients, open the URL `<server address>:<port>` in your browser
 
 The port used by default is `8000`.
 
